@@ -104,8 +104,8 @@ class CoffeeTypes {
 		public static void espresso () { 
         String missing = CoffeeMachine.check (250,0,16); 
 	      if (missing.equals("")){ 
-    		    System.out.println("I have enough resources, making you a coffee!");
-    	      CoffeeMachine.iWater -= 250; 
+    		System.out.println("I have enough resources, making you a coffee!");
+    	    CoffeeMachine.iWater -= 250; 
             CoffeeMachine.iBeans -= 16;
             CoffeeMachine.iMoney += 4;
             CoffeeMachine.iCups -= 1;
