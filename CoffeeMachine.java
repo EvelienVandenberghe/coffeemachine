@@ -19,10 +19,10 @@ public class CoffeeMachine {
                 buy ();     
                 break;
             case "fill":
-	              fill ();
+	            fill ();
                 break;
             case "take":
-		            System.out.println("I gave you $" + iMoney);
+		        System.out.println("I gave you $" + iMoney);
                 iMoney = 0; 
                 break;
         		case "clean":   
@@ -71,27 +71,26 @@ public class CoffeeMachine {
       }
 
       public static void fill () {
-      	          System.out.println("Write how many ml of water you want to add:");
-                      int addWater = scanner.nextInt();
-                      iWater += addWater;
-                      System.out.println("Write how many ml of milk you want to add:");	
-                      int addMilk = scanner.nextInt();
-                      iMilk += addMilk;
-                      System.out.println("Write how many grams of coffee beans you want to add:");	
-                      int addBeans = scanner.nextInt();
-                      iBeans += addBeans;
-                      System.out.println("Write how many disposable cups you want to add:");
-                      int addCups = scanner.nextInt();
-                      iCups += addCups;
+		  System.out.println("Write how many ml of water you want to add:");
+			  int addWater = scanner.nextInt();
+			  iWater += addWater;
+			  System.out.println("Write how many ml of milk you want to add:");	
+			  int addMilk = scanner.nextInt();
+			  iMilk += addMilk;
+			  System.out.println("Write how many grams of coffee beans you want to add:");	
+			  int addBeans = scanner.nextInt();
+			  iBeans += addBeans;
+			  System.out.println("Write how many disposable cups you want to add:");
+			  int addCups = scanner.nextInt();
+			  iCups += addCups;
       }
 
       public static String check (int needW, int needM, int needB) { 
           if (iWater < needW) return "water"; 
-            if (iMilk < needM) return "milk";
-                  if (iBeans < needB) return "coffee beans";       
-              if (iCups < 1) return "cups";    
-              return ""; 
-                      
+          if (iMilk < needM) return "milk";
+          if (iBeans < needB) return "coffee beans";       
+          if (iCups < 1) return "cups";    
+          return "";                       
       }
 
       public static void clean () { 
@@ -101,48 +100,47 @@ public class CoffeeMachine {
 }
 
 class CoffeeTypes {
-		public static void espresso () { 
-        String missing = CoffeeMachine.check (250,0,16); 
-	      if (missing.equals("")){ 
-    		System.out.println("I have enough resources, making you a coffee!");
-    	    CoffeeMachine.iWater -= 250; 
-            CoffeeMachine.iBeans -= 16;
-            CoffeeMachine.iMoney += 4;
-            CoffeeMachine.iCups -= 1;
-		        CoffeeMachine.counter ++; 
-		      } else {
-            System.out.println("Sorry, not enough " + missing + "!");
-          }                
+	  public static void espresso () { 
+		  String missing = CoffeeMachine.check (250,0,16); 
+		  if (missing.equals("")){ 
+			  System.out.println("I have enough resources, making you a coffee!");
+			  CoffeeMachine.iWater -= 250; 
+			  CoffeeMachine.iBeans -= 16;
+			  CoffeeMachine.iMoney += 4;
+			  CoffeeMachine.iCups -= 1;
+			  CoffeeMachine.counter ++; 
+	      } else {
+		      System.out.println("Sorry, not enough " + missing + "!");
+	      }                
     }
 
     public static void latte () { 
-    	     String missing = CoffeeMachine.check (350,75,20);
-    	     if (missing.equals("")){
-              System.out.println("I have enough resources, making you a coffee!");
-              CoffeeMachine.iWater -= 350;
-              CoffeeMachine.iMilk -= 75;
-              CoffeeMachine.iBeans -= 20;
-              CoffeeMachine.iMoney += 7;
-              CoffeeMachine.iCups -= 1; 
-              CoffeeMachine.counter ++;
-    			  } else {
-    			    System.out.println("Sorry, not enough " + missing + "!");
-            }
-                    
+		 String missing = CoffeeMachine.check (350,75,20);
+		 if (missing.equals("")){
+			  System.out.println("I have enough resources, making you a coffee!");
+			  CoffeeMachine.iWater -= 350;
+			  CoffeeMachine.iMilk -= 75;
+			  CoffeeMachine.iBeans -= 20;
+			  CoffeeMachine.iMoney += 7;
+			  CoffeeMachine.iCups -= 1; 
+			  CoffeeMachine.counter ++;
+		 } else {
+			  System.out.println("Sorry, not enough " + missing + "!");
+		 }                    
     }
 
     public static void cappuccino () { 
-           String missing = CoffeeMachine.check (200,100,12);
-    	     if (missing.equals("")){
-              System.out.println("I have enough resources, making you a coffee!");
-              CoffeeMachine.iWater -= 200;
-              CoffeeMachine.iMilk -= 100;
-              CoffeeMachine.iBeans -= 12;
-              CoffeeMachine.iMoney += 6;
-              CoffeeMachine.iCups -= 1; 
-              CoffeeMachine.counter ++;
-    			  } else {
-    			    System.out.println("Sorry, not enough " + missing + "!");
-            }                    
+	   String missing = CoffeeMachine.check (200,100,12);
+		 if (missing.equals("")){
+			  System.out.println("I have enough resources, making you a coffee!");
+			  CoffeeMachine.iWater -= 200;
+			  CoffeeMachine.iMilk -= 100;
+			  CoffeeMachine.iBeans -= 12;
+			  CoffeeMachine.iMoney += 6;
+			  CoffeeMachine.iCups -= 1; 
+			  CoffeeMachine.counter ++;
+		 } else {
+			  System.out.println("Sorry, not enough " + missing + "!");
+		 }                    
     }
 }
